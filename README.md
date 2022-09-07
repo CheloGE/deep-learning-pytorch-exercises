@@ -181,3 +181,5 @@ For this project a docker container was created, please follow these steps to se
     `docker start pytorch_exercises`
 
     `docker exec -it pytorch_exercises bash`
+
+** **Disclaimer:** The Docker container was tested with a `Quadro RTX 5000 with Max-Q Design` GPU. Might need some changes for other GPUs
