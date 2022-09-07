@@ -161,3 +161,23 @@ jupyter notebook
 ```
 
 To exit the environment when you have completed your work session, simply close the terminal window.
+
+## **Alternative 2:** Setup the environment with Docker
+
+### Install dependencies with docker
+
+For this project a docker container was created, please follow these steps to setup the environment:
+
+1. Build Dockerfile
+
+    `docker build -t my_general:pytorch .`
+
+2. Create container (this assumes you want to run the project on GPU)
+
+    ``docker run --name pytorch_exercises -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v `pwd`:/project -it --env QT_X11_NO_MITSHM=1 --device /dev/dri --privileged --gpus all my_general:pytorch``
+
+3. Everytime we want to run container
+
+    `docker start pytorch_exercises`
+
+    `docker exec -it pytorch_exercises bash`
